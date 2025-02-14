@@ -1120,6 +1120,22 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <!---contact section ends-->
 
+  <!-- Chatbot HTML -->
+<div id="chatbot-container">
+    <div id="chatbot-header">
+        <span>Aroma Coffee Chatbot</span>
+        <button id="close-chatbot">&times;</button>
+    </div>
+    <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+    </div>
+    <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+</div>
+<button id="chatbot-toggle">Chat with Us</button>
+
   <!---footer section strats-->
   <section class="footer">
     <div class="big">
@@ -1176,6 +1192,86 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     });
 });
   </script>
+  <script>
+    
+    // Chatbot Logic
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const closeChatbot = document.getElementById('close-chatbot');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', function () {
+            chatbotContainer.style.display = 'flex';
+            chatbotToggle.style.display = 'none';
+        });
+
+        // Close chatbot
+        closeChatbot.addEventListener('click', function () {
+            chatbotContainer.style.display = 'none';
+            chatbotToggle.style.display = 'block';
+        });
+
+        // Send message
+        sendButton.addEventListener('click', function () {
+            sendMessage();
+        });
+
+        chatbotInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const userMessage = chatbotInput.value.trim();
+            if (userMessage) {
+                // Add user message to chat
+                addMessage(userMessage, 'user');
+
+                // Clear input
+                chatbotInput.value = '';
+
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = getBotResponse(userMessage);
+                    addMessage(botMessage, 'bot');
+                }, 500);
+            }
+        }
+
+        function addMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            messageElement.textContent = message;
+            chatbotMessages.appendChild(messageElement);
+
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            const lowerCaseMessage = userMessage.toLowerCase();
+
+            if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) {
+                return 'Hello! Welcome to Aroma Coffee. How can I assist you today?';
+            } else if (lowerCaseMessage.includes('menu')) {
+                return 'Our menu includes a variety of coffees, lattes, cappuccinos, and pastries. Would you like to know more about a specific item?';
+            } else if (lowerCaseMessage.includes('hours')) {
+                return 'We are open from 8:00 AM to 8:00 PM every day.';
+            } else if (lowerCaseMessage.includes('location')) {
+                return 'We are located at Aroma Coffee, xxxx xxx, xxxxxx, xxxxxxx.';
+            } else if (lowerCaseMessage.includes('contact')) {
+                return 'You can reach us at +94 xx xxx xxxx or email us at AromaCoffee@email.com.';
+            } else {
+                return 'I’m sorry, I didn’t understand that. How can I assist you?';
+            }
+        }
+    });
+</script>
   <script src="menu.js"></script>
 </body>
 

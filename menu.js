@@ -24,3 +24,5 @@ previewBox.forEach(close =>{
   };
 });
 
+
+
