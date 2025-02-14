@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1,
+        "name": "whole bean",
+        "price": 450,
+        "image": "images/p-1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Ground",
+        "price": 500,
+        "image": "images/p-2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "VIA instant",
+        "price": 1000,
+        "image": "images/p-3.jpg"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Coffee Pods",
+        "price": 800,
+        "image": "images/p-4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "classic cappuccino",
+        "price": 600,
+        "image": "images/p-5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Iced Cappuccino",
+        "price": 600,
+        "image": "images/p-6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Cinnamon Cappuccino",
+        "price": 650,
+        "image": "images/p-7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Almond Cappuccino",
+        "price": 900,
+        "image": "images/p-8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "flat white",
+        "price": 700,
+        "image": "images/p-9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "honey almondmilk flat white",
+        "price": 900,
+        "image": "images/p-10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Caramel Latte",
+        "price": 700,
+        "image": "images/p-11.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Classic Latte",
+        "price": 600,
+        "image": "images/p-12.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Pumpkin Spice Latte",
+        "price": 800,
+        "image": "images/p-13.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Coconut latte",
+        "price": 850,
+        "image": "images/p-14.jpg"
+    },
+    {
+        "id": 15,
+        "name": "iced latte",
+        "price": 700,
+        "image": "images/p-15.jpg"
+    },
+    {
+        "id": 16,
+        "name": "apple crip oatmilk macchiato",
+        "price": 700,
+        "image": "images/p-16.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Vanilla Macchiato",
+        "price": 650,
+        "image": "images/p-17.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Caramel Macchiat",
+        "price": 650,
+        "image": "images/p-18.jpg"
+    },
+    {
+        "id": 19,
+        "name": "iced macchiato",
+        "price": 650,
+        "image": "images/p-19.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Nitro Cold Brew with Milk",
+        "price": 850,
+        "image": "images/p-20.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Nitro Cold Brew with Vanilla",
+        "price": 900,
+        "image": "images/p-21.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Nitro Cold Brew Latte",
+        "price": 50,
+        "image": "images/p-22.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Iced Coffee",
+        "price": 450,
+        "image": "images/p-23.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Iced Flat White",
+        "price": 650,
+        "image": "images/p-24.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Chocolate Croissant",
+        "price": 450,
+        "image": "images/p-25.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Cinnamon Roll",
+        "price": 400,
+        "image": "images/p-26.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Muffins",
+        "price": 350,
+        "image": "images/p-27.jpg"
+    },
+    {
+        "id": 28,
+        "name": "Brownies",
+        "price": 350,
+        "image": "images/p-28.jpg"
+    }
+
+]
