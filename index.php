@@ -36,10 +36,11 @@ include("connect.php");
     </nav>
 
     <div class="icons">
-      <a href="forSearchEngine.php">
-        <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-search" id="search-btn"></div>
+      <a href="cart-index.php" target="_blank"> 
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
       </a>
-      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+     
       <a href="userLog.php">
         <div class="fas fa-user-alt" id="user-btn"></div>
       </a>
@@ -1051,6 +1052,8 @@ include("connect.php");
 });
   </script>
   <script src="menu.js"></script>
+  <script src="searchEngine.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

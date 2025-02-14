@@ -66,6 +66,66 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             color: #666;
             margin: 10px 0;
         }
+        /* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.1rem 3%;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        display: none;
+    }
+
+    .header .navbar.active {
+        display: flex;
+    }
+
+    .header .navbar a {
+        margin: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .header .icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .header .icons #menu-btn {
+        display: block;
+    }
+
+    .header .icons div {
+        margin-left: 1rem;
+    }
+
+    .logout-btn a {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .logo img {
+        width: 60px;
+    }
+
+    .header .navbar a {
+        font-size: 1rem;
+    }
+
+    .header .icons div {
+        font-size: 1.2rem;
+    }
+
+    .logout-btn a {
+        font-size: 0.9rem;
+    }
+}
     </style>
 
 </head>
@@ -73,10 +133,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!--Header section starts-->
 <header class="header">
     <a href="#" class="logo">
-        <img src="pics/aroma_logo.png" alt="">
+        <img src="pics/aroma_logo.png" alt="Aroma Coffee Logo">
     </a>
 
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="#home">HOME</a>
         <a href="#story">STORY</a>
         <a href="#menu">MENU</a>
@@ -85,15 +145,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div> 
+        <a href="cart-index.php" target="_blank"> 
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      </a>
         <a href="#"><div class="fas fa-user-alt" id="user-btn"></div></a>
         <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="user-name">
-       
-       </div>
+        <div class="user-name"></div>
         <div class="logout-btn"><a href="logout.php">Logout</a></div>
-   </div>
-   
+    </div>
 
     <div class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
