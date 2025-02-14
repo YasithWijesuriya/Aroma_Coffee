@@ -28,14 +28,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
       
      
-      .product-container {
+      .product-container2 {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
             justify-content: center;
         }
-        .product-card {
+        .product-card2 {
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -45,23 +45,23 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             padding: 15px;
             transition: transform 0.3s ease;
         }
-        .product-card:hover {
+        .product-card2:hover {
             transform: translateY(-5px);
         }
-        .product-card img {
+        .product-card2 img {
             max-width: 100%;
             border-radius: 10px;
         }
-        .product-card h3 {
+        .product-card2 h3 {
             font-size: 1.2rem;
             margin: 10px 0;
         }
-        .product-card .price {
+        .product-card2 .price {
             font-size: 1.1rem;
             color: #573c27;
             font-weight: bold;
         }
-        .product-card .description {
+        .product-card2 .description {
             font-size: 0.9rem;
             color: #666;
             margin: 10px 0;
@@ -352,9 +352,27 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       </div>
     </div>
-    <hr style="border: 1px solid gray; width: 60%; margin: 20px auto;">
     
 
+     <!-- Product Section -->
+     <section class="menu" id="menu">
+     <hr style="border: 1px solid gray; width: 80%; margin: 20px auto;">
+        <h1 class="heading">Special <span>Offer products</span></h1>
+      <hr style="border: 1px solid gray; width: 43%; margin: 20px auto;">
+        <div class="product-container2">
+            <?php foreach ($products as $product): ?>
+                <div class="product-card2">
+                    <img src="pics/<?= $product['image'] ?>" alt="<?= $product['name'] ?>">
+                    <h3><?= $product['name'] ?></h3>
+                    <p class="description"><?= $product['description'] ?></p>
+                    <p class="price">Rs. <?= $product['price'] ?></p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    
+    <hr style="border: 1px solid gray; width: 60%; margin: 20px auto;">
    <!--Story section starts-->
   <section class="story" id="story">
     <h2 class="heading"><span>Our</span> Story</h2>
@@ -959,21 +977,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   </section>
 
-    <!-- Product Section -->
-    <section class="menu" id="menu">
-        <h1 class="heading">Our<span> Menu</span></h1>
-        <div class="product-container2">
-            <?php foreach ($products as $product): ?>
-                <div class="product-card2">
-                    <img src="pics/<?= $product['image'] ?>" alt="<?= $product['name'] ?>">
-                    <h3><?= $product['name'] ?></h3>
-                    <p class="description"><?= $product['description'] ?></p>
-                    <p class="price">Rs. <?= $product['price'] ?></p>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+   
 
   <!---menu section ends-->
 
