@@ -927,19 +927,19 @@ include("connect.php");
         <h3>touch with us!</h3>
         <div class="inputBox">
           <span class="fas fa-user"></span>
-          <input id="f-in" type="text" placeholder="name">
+          <input id="f-in" type="text" name="name" placeholder="name">
         </div>
         <div class="inputBox">
           <span class="fas fa-envelope"></span>
-          <input id="f-in" type="email" placeholder="email">
+          <input id="f-in" type="email" name="email" placeholder="email">
         </div>
         <div class="inputBox">
           <span class="fas fa-phone"></span>
-          <input id="f-in" type="number" placeholder="number">
+          <input id="f-in" type="number" name="phone" placeholder="number">
         </div>
         <div class="inputBox">
           <span class="fas fa-map-marker-alt"></span>
-          <input id="f-in" type="address" placeholder="address">
+          <input id="f-in" type="address" name="address" placeholder="address">
         </div>
 
         <input type="submit" value="contact now" class="btn">

@@ -9,70 +9,78 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aroma Coffee</title>
 
-    <!---font awesome cdn link--->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma Coffee</title>
+
+  <!---font awesome cdn link--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!---custom css file link-->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin-style.css">
-    <link rel="icon" href="pics/aroma.png" />
-    <style>
-      body{
-        background-color:whitesmoke;
-      }
-      
-     
-      .product-container2 {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-            justify-content: center;
-        }
-        .product-card2 {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            text-align: center;
-            padding: 15px;
-            transition: transform 0.3s ease;
-        }
-        .product-card2:hover {
-            transform: translateY(-5px);
-        }
-        .product-card2 img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .product-card2 h3 {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-        .product-card2 .price {
-            font-size: 1.1rem;
-            color: #573c27;
-            font-weight: bold;
-        }
-        .product-card2 .description {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 10px 0;
-        }
-        /* Responsive Styles */
-@media (max-width: 768px) {
-    .header {
-        padding: 0.1rem 3%;
+  <!---custom css file link-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin-style.css">
+  <link rel="icon" href="pics/aroma.png" />
+  <style>
+    body {
+      background-color: whitesmoke;
     }
 
-    .header .navbar {
+
+    .product-container2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .product-card2 {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card2:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card2 img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card2 h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .product-card2 .price {
+      font-size: 1.1rem;
+      color: #573c27;
+      font-weight: bold;
+    }
+
+    .product-card2 .description {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0.1rem 3%;
+      }
+
+      .header .navbar {
         position: absolute;
         top: 100%;
         left: 0;
@@ -80,89 +88,92 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         background: var(--bg);
         flex-direction: column;
         display: none;
-    }
+      }
 
-    .header .navbar.active {
+      .header .navbar.active {
         display: flex;
-    }
+      }
 
-    .header .navbar a {
+      .header .navbar a {
         margin: 1rem;
         font-size: 1.2rem;
-    }
+      }
 
-    .header .icons {
+      .header .icons {
         display: flex;
         align-items: center;
-    }
+      }
 
-    .header .icons #menu-btn {
+      .header .icons #menu-btn {
         display: block;
-    }
+      }
 
-    .header .icons div {
+      .header .icons div {
         margin-left: 1rem;
-    }
+      }
 
-    .logout-btn a {
+      .logout-btn a {
         margin-left: 1rem;
+      }
     }
-}
 
-@media (max-width: 480px) {
-    .header .logo img {
+    @media (max-width: 480px) {
+      .header .logo img {
         width: 60px;
-    }
+      }
 
-    .header .navbar a {
+      .header .navbar a {
         font-size: 1rem;
-    }
+      }
 
-    .header .icons div {
+      .header .icons div {
         font-size: 1.2rem;
-    }
+      }
 
-    .logout-btn a {
+      .logout-btn a {
         font-size: 0.9rem;
+      }
     }
-}
-    </style>
+  </style>
 
 </head>
+
 <body>
-<!--Header section starts-->
-<header class="header">
+  <!--Header section starts-->
+  <header class="header">
     <a href="#" class="logo">
-        <img src="pics/aroma_logo.png" alt="Aroma Coffee Logo">
+      <img src="pics/aroma_logo.png" alt="Aroma Coffee Logo">
     </a>
 
     <nav class="navbar" id="navbar">
-        <a href="#home">HOME</a>
-        <a href="#story">STORY</a>
-        <a href="#menu">MENU</a>
-        <a href="#contact">CONTACTS</a>
-    </nav>
+      <a href="#home">HOME</a>
+      <a href="#story">STORY</a>
+      <a href="#menu">MENU</a>
+      <a href="#contact">CONTACTS</a>
 
+    </nav>
     <div class="icons">
-        <div class="fas fa-search" id="search-btn"></div>
-        <a href="cart-index.php" target="_blank"> 
+      <div class="fas fa-search" id="search-btn"></div>
+      <a href="cart-index.php" target="_blank">
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
       </a>
-        <a href="#"><div class="fas fa-user-alt" id="user-btn"></div></a>
-        <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="user-name"></div>
-        <div class="logout-btn"><a href="logout.php">Logout</a></div>
+      <a href="#">
+        <div class="fas fa-user-alt" id="user-btn"></div>
+      </a>
+      <div class="fas fa-bars" id="menu-btn"></div>
+      <div class="user-name"></div>
+      <div class="logout-btn"><a href="logout.php">Logout</a></div>
     </div>
 
     <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box" class="fas fa-search"></label>
     </div>
-</header>
-<!--Header section ends-->
+  </header>
+  <!--Header section ends-->
 
- <!--Home section starts-->
- <section class="home" id="home">
+  <!--Home section starts-->
+  <section class="home" id="home">
     <div class="content">
       <h3>Espresso Yourself!</h3>
       <p>We’re all about great coffee and good vibes. Whether you’re in the mood
@@ -180,13 +191,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </section>
   <!--Home section ends-->
 
-  
+
   <hr style="border: 1px solid gray; width: 60%; margin: 10px auto;margin-top:40px">
   <!--menu section starts-->
   <section class="menu" id="menu">
     <h1 class="heading">Our<span> Menu</span></h1>
 
-   
+
     <hr style="border: 1px solid gray; width: 53%; margin: 5px auto;">
     <div class="container">
       <h3 class="title">at home coffee</h3>
@@ -411,58 +422,60 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       </div>
     </div>
-    
 
-     <!-- Product Section -->
-     <section class="menu" id="menu">
-     <hr style="border: 1px solid gray; width: 80%; margin: 20px auto;">
-        <h1 class="heading">Special <span>Offer products</span></h1>
+
+    <!-- Product Section -->
+    <section class="menu" id="menu">
+      <hr style="border: 1px solid gray; width: 80%; margin: 20px auto;">
+      <h1 class="heading">Special <span>Offer products</span></h1>
       <hr style="border: 1px solid gray; width: 43%; margin: 20px auto;">
-        <div class="product-container2">
-            <?php foreach ($products as $product): ?>
-                <div class="product-card2">
-                    <img src="pics/<?= $product['image'] ?>" alt="<?= $product['name'] ?>">
-                    <h3><?= $product['name'] ?></h3>
-                    <p class="description"><?= $product['description'] ?></p>
-                    <p class="price">Rs. <?= $product['price'] ?></p>
-                    <button class="btn">Add to Cart</button>
-                </div>
-            <?php endforeach; ?>
-        </div>
+      <div class="product-container2">
+        <?php foreach ($products as $product): ?>
+          <div class="product-card2">
+            <img src="pics/<?= $product['image'] ?>" alt="<?= $product['name'] ?>">
+            <h3><?= $product['name'] ?></h3>
+            <p class="description"><?= $product['description'] ?></p>
+            <p class="price">Rs. <?= $product['price'] ?></p>
+            <button class="btn">Add to Cart</button>
+          </div>
+        <?php endforeach; ?>
+      </div>
     </section>
-    
+
     <hr style="border: 1px solid gray; width: 60%; margin: 20px auto;">
-   <!--Story section starts-->
-  <section class="story" id="story">
-    <h2 class="heading"><span>Our</span> Story</h2>
-    <hr style="border: 1px solid gray; width: 53%; margin: 20px auto;">
-  
-    <div class="row">
-      <div class="image">
-        <img src="pics/iced-coffee-sugar-cubes-top-view.jpg" alt="">
-      </div>
+    <!--Story section starts-->
+    <section class="story" id="story">
+      <h2 class="heading"><span>Our</span> Story</h2>
+      <hr style="border: 1px solid gray; width: 53%; margin: 20px auto;">
 
-      <div class="content">
-        <h2>Aroma Coffee</h2>
-        <h3>Discover the Heart Behind the Brew</h3>
-        <p>Aroma Coffee, a small, cozy café nestled in the heart of Kandy Town. Born from a passion for exceptional
-          coffee and heartfelt connections, Aroma Coffee is more than just a coffee shop—it’s a place where every
-          sip and every bite brings people together.</p>
-        <p>Our journey began with a simple dream: to create a space where coffee enthusiasts and casual visitors alike
-          could enjoy world-class coffee in
-          a warm and welcoming environment. Today, Aroma Coffee is proud to be a local favorite, serving not only
-          expertly crafted coffee but also a
-          selection of freshly baked pastries made daily with care.</p>
-        <p>We believe that quality is key, which is why we source only the finest coffee beans and ingredients. Whether
-          you’re enjoying a classic espresso, a frothy cappuccino, or indulging in one of our buttery croissants, every
-          item
-          on our menu is made with love and attention to detail.</p>
-        <p>Step into our café or order online, and let us be part of your story, one delightful sip at a time.</p>
+      <div class="row">
+        <div class="image">
+          <img src="pics/iced-coffee-sugar-cubes-top-view.jpg" alt="">
+        </div>
 
+        <div class="content">
+          <h2>Aroma Coffee</h2>
+          <h3>Discover the Heart Behind the Brew</h3>
+          <p>Aroma Coffee, a small, cozy café nestled in the heart of Kandy Town. Born from a passion for exceptional
+            coffee and heartfelt connections, Aroma Coffee is more than just a coffee shop—it’s a place where every
+            sip and every bite brings people together.</p>
+          <p>Our journey began with a simple dream: to create a space where coffee enthusiasts and casual visitors alike
+            could enjoy world-class coffee in
+            a warm and welcoming environment. Today, Aroma Coffee is proud to be a local favorite, serving not only
+            expertly crafted coffee but also a
+            selection of freshly baked pastries made daily with care.</p>
+          <p>We believe that quality is key, which is why we source only the finest coffee beans and ingredients.
+            Whether
+            you’re enjoying a classic espresso, a frothy cappuccino, or indulging in one of our buttery croissants,
+            every
+            item
+            on our menu is made with love and attention to detail.</p>
+          <p>Step into our café or order online, and let us be part of your story, one delightful sip at a time.</p>
+
+        </div>
       </div>
-    </div>
-  </section>
-  <!--Story section ends-->
+    </section>
+    <!--Story section ends-->
 
     <div class="products-preview">
 
@@ -483,7 +496,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           or specialty brands like Stumptown, Blue Bottle, and Intelligentsia.</p>
         <div class="price">Rs. 450.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="1">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="1">Order Now</a>
         </div>
       </div>
 
@@ -503,7 +516,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           brands like Lavazza, Peet's Coffee, and Death Wish offer high-quality ground coffee.</p>
         <div class="price">Rs. 500.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="2">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="2">Order Now</a>
         </div>
       </div>
 
@@ -523,7 +536,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           offering rich flavor in an easy-to-use packet.</p>
         <div class="price">Rs. 1000.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="3">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="3">Order Now</a>
         </div>
       </div>
 
@@ -543,7 +556,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </p>
         <div class="price">Rs. 800.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="4">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="4">Order Now</a>
         </div>
       </div>
 
@@ -562,7 +575,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>A traditional blend of equal parts espresso, steamed milk, and milk foam.</p>
         <div class="price">Rs. 600.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="5">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="5">Order Now</a>
         </div>
       </div>
 
@@ -581,7 +594,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Chilled espresso with milk and foam, served over ice</p>
         <div class="price">Rs. 600.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="6">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="6">Order Now</a>
         </div>
       </div>
 
@@ -600,7 +613,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Sprinkled with ground cinnamon for added warmth and spice.</p>
         <div class="price">Rs. 650.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="7">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="7">Order Now</a>
         </div>
       </div>
 
@@ -619,7 +632,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Made with almond milk, perfect for nutty flavor lovers.</p>
         <div class="price">Rs. 900.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="8">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="8">Order Now</a>
         </div>
       </div>
 
@@ -639,7 +652,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           offering a balanced flavor with a creamy texture.</p>
         <div class="price">Rs. 700.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="9">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="9">Order Now</a>
         </div>
       </div>
 
@@ -659,7 +672,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           and a hint of honey for natural sweetness and nutty flavor.</p>
         <div class="price">Rs. 900.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="10">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="10">Order Now</a>
         </div>
       </div>
 
@@ -678,7 +691,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Sweet and creamy, made with caramel syrup.</p>
         <div class="price">Rs. 700.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="11">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="11">Order Now</a>
         </div>
       </div>
 
@@ -697,7 +710,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Espresso with steamed milk and a light layer of milk foam on top</p>
         <div class="price">Rs. 600.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="12">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="12">Order Now</a>
         </div>
       </div>
 
@@ -716,7 +729,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>A seasonal favorite with pumpkin spice flavors, perfect for autumn.</p>
         <div class="price">Rs. 800.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="13">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="13">Order Now</a>
         </div>
       </div>
 
@@ -735,7 +748,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Made with coconut milk for a tropical flavor</p>
         <div class="price">Rs. 850.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="14">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="14">Order Now</a>
         </div>
       </div>
 
@@ -754,7 +767,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Espresso mixed with cold milk, served over ice for a refreshing treat</p>
         <div class="price">Rs. 700.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="15">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="15">Order Now</a>
         </div>
       </div>
 
@@ -774,7 +787,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           topped with a drizzle of apple brown sugar syrup for a warm, autumn-inspired treat.</p>
         <div class="price">Rs. 700.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="16">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="16">Order Now</a>
         </div>
       </div>
 
@@ -793,7 +806,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Espresso combined with vanilla syrup and steamed milk, topped with foam for a smooth and sweet taste</p>
         <div class="price">Rs. 650.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="17">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="17">Order Now</a>
         </div>
       </div>
 
@@ -812,7 +825,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>A sweet variation made with espresso, steamed milk, vanilla syrup, and topped with caramel drizzle</p>
         <div class="price">Rs. 650.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="18">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="18">Order Now</a>
         </div>
       </div>
 
@@ -832,7 +845,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           made with espresso poured over ice and topped with cold milk or milk foam</p>
         <div class="price">Rs. 650.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="19">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="19">Order Now</a>
         </div>
       </div>
 
@@ -851,7 +864,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Classic nitro cold brew combined with a splash of milk or cream for a smoother, creamier taste</p>
         <div class="price">Rs. 850.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="20">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="20">Order Now</a>
         </div>
       </div>
 
@@ -870,7 +883,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Cold brew coffee infused with nitrogen and flavored with vanilla syrup for a sweet and aromatic touch</p>
         <div class="price">Rs. 900.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="21">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="21">Order Now</a>
         </div>
       </div>
 
@@ -889,7 +902,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>A creamy blend of nitro cold brew coffee and steamed milk for a smooth, frothy, and slightly sweet drink</p>
         <div class="price">Rs. 50.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="22">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="22">Order Now</a>
         </div>
       </div>
 
@@ -908,7 +921,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Regular brewed coffee served over ice, typically sweetened and sometimes with milk or cream</p>
         <div class="price">Rs. 450.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="23">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="23">Order Now</a>
         </div>
       </div>
 
@@ -928,7 +941,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Espresso mixed with cold milk and ice, offering a velvety texture and a strong coffee flavor</p>
         <div class="price">Rs. 650.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="24">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="24">Order Now</a>
         </div>
       </div>
 
@@ -948,7 +961,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>SA croissant filled with rich, melted chocolate, perfect for a sweet treat</p>
         <div class="price">Rs. 450.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="25">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="25">Order Now</a>
         </div>
       </div>
 
@@ -968,7 +981,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>A soft, sweet roll filled with cinnamon and sugar, often topped with cream cheese icing</p>
         <div class="price">Rs. 400.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="26">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="26">Order Now</a>
         </div>
       </div>
 
@@ -987,7 +1000,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Fluffy, baked goods in various flavors such as blueberry, chocolate chip, or banana</p>
         <div class="price">Rs. 350.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="27">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="27">Order Now</a>
         </div>
       </div>
 
@@ -1006,7 +1019,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Rich, fudgy squares of chocolate with or without nuts</p>
         <div class="price">Rs. 350.00</div>
         <div class="button">
-        <a href="cart-index.php" target="_blank" class="btn" data-id="28">Order Now</a>
+          <a href="cart-index.php" target="_blank" class="btn" data-id="28">Order Now</a>
         </div>
       </div>
 
@@ -1036,7 +1049,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   </section>
 
-   
+
 
   <!---menu section ends-->
 
@@ -1048,31 +1061,52 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013127.1260302422!2d79.483706046875!3d7.2944355000000245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3662b9bef5c5b%3A0x5750bfa34ed0ca!2sCafe%20Aroma%20Inn!5e0!3m2!1sen!2slk!4v1733075985682!5m2!1sen!2slk"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-      <form action="https://formsubmit.co/yasithwijesuriyauniversity2002@gmail.com" method="POST">
-        <h3>touch with us!</h3>
-        <div class="inputBox">
-          <span class="fas fa-user"></span>
-          <input id="f-in" type="text" placeholder="name">
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-envelope"></span>
-          <input id="f-in" type="email" placeholder="email">
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-phone"></span>
-          <input id="f-in" type="number" placeholder="number">
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-map-marker-alt"></span>
-          <input id="f-in" type="address" placeholder="address">
-        </div>
+        <form action="https://formsubmit.co/yasithwijesuriyauniversity2002@gmail.com" method="POST">
+    <h3>Get in Touch with Us!</h3>
+    
+    <!-- Contact Details -->
+    <div class="inputBox">
+        <span class="fas fa-user"></span>
+        <input id="f-in" type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-envelope"></span>
+        <input id="f-in" type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-phone"></span>
+        <input id="f-in" type="tel" name="phone" placeholder="Your Phone Number" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-map-marker-alt"></span>
+        <input id="f-in" type="text" name="address" placeholder="Your Address">
+    </div>
 
-        <input type="submit" value="contact now" class="btn">
-      </form>
+    <!-- Table Reservation Details -->
+    <div class="inputBox">
+        <span class="fas fa-calendar-alt"></span>
+        <input id="f-in" type="date" name="reservation_date" placeholder="Reservation Date" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-clock"></span>
+        <input id="f-in" type="time" name="reservation_time" placeholder="Reservation Time" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-users"></span>
+        <input id="f-in" type="number" name="guests" placeholder="Number of Guests" min="1" required>
+    </div>
+    <div class="inputBox">
+        <span class="fas fa-comment"></span>
+        <textarea id="f-in" name="special_requests" placeholder="Special Requests (e.g., allergies, preferences)"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Reserve Now" class="btn">
+</form>
     </div>
   </section>
 
- 
+
   <section class="contactus">
     <div class="pic-area">
       <div class="pic-area-text">
@@ -1097,7 +1131,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
 
-        
+
 
         <div class="icons">
           <a href="#!">
@@ -1121,20 +1155,20 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!---contact section ends-->
 
   <!-- Chatbot HTML -->
-<div id="chatbot-container">
+  <div id="chatbot-container">
     <div id="chatbot-header">
-        <span>Aroma Coffee Chatbot</span>
-        <button id="close-chatbot">&times;</button>
+      <span>Aroma Coffee Chatbot</span>
+      <button id="close-chatbot">&times;</button>
     </div>
     <div id="chatbot-body">
-        <div id="chatbot-messages"></div>
+      <div id="chatbot-messages"></div>
     </div>
     <div id="chatbot-input-container">
-        <input type="text" id="chatbot-input" placeholder="Type a message...">
-        <button id="send-button">Send</button>
+      <input type="text" id="chatbot-input" placeholder="Type a message...">
+      <button id="send-button">Send</button>
     </div>
-</div>
-<button id="chatbot-toggle">Chat with Us</button>
+  </div>
+  <button id="chatbot-toggle">Chat with Us</button>
 
   <!---footer section strats-->
   <section class="footer">
@@ -1184,95 +1218,102 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //menu toggle
     document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = document.querySelector('#menu-btn');
-    const navbar = document.querySelector('.header .navbar');
+      const menuBtn = document.querySelector('#menu-btn');
+      const navbar = document.querySelector('.header .navbar');
 
-    menuBtn.addEventListener('click', function () {
+      menuBtn.addEventListener('click', function () {
         navbar.classList.toggle('active');
+      });
     });
-});
   </script>
   <script>
-    
+
     // Chatbot Logic
     document.addEventListener('DOMContentLoaded', function () {
-        const chatbotContainer = document.getElementById('chatbot-container');
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const closeChatbot = document.getElementById('close-chatbot');
-        const chatbotMessages = document.getElementById('chatbot-messages');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const sendButton = document.getElementById('send-button');
+      const chatbotContainer = document.getElementById('chatbot-container');
+      const chatbotToggle = document.getElementById('chatbot-toggle');
+      const closeChatbot = document.getElementById('close-chatbot');
+      const chatbotMessages = document.getElementById('chatbot-messages');
+      const chatbotInput = document.getElementById('chatbot-input');
+      const sendButton = document.getElementById('send-button');
 
-        // Toggle chatbot visibility
-        chatbotToggle.addEventListener('click', function () {
-            chatbotContainer.style.display = 'flex';
-            chatbotToggle.style.display = 'none';
-        });
+      // Toggle chatbot visibility
+      chatbotToggle.addEventListener('click', function () {
+        chatbotContainer.style.display = 'flex';
+        chatbotToggle.style.display = 'none';
+      });
 
-        // Close chatbot
-        closeChatbot.addEventListener('click', function () {
-            chatbotContainer.style.display = 'none';
-            chatbotToggle.style.display = 'block';
-        });
+      // Close chatbot
+      closeChatbot.addEventListener('click', function () {
+        chatbotContainer.style.display = 'none';
+        chatbotToggle.style.display = 'block';
+      });
 
-        // Send message
-        sendButton.addEventListener('click', function () {
-            sendMessage();
-        });
+      // Send message
+      sendButton.addEventListener('click', function () {
+        sendMessage();
+      });
 
-        chatbotInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-
-        function sendMessage() {
-            const userMessage = chatbotInput.value.trim();
-            if (userMessage) {
-                // Add user message to chat
-                addMessage(userMessage, 'user');
-
-                // Clear input
-                chatbotInput.value = '';
-
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessage = getBotResponse(userMessage);
-                    addMessage(botMessage, 'bot');
-                }, 500);
-            }
+      chatbotInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          sendMessage();
         }
+      });
 
-        function addMessage(message, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message', sender);
-            messageElement.textContent = message;
-            chatbotMessages.appendChild(messageElement);
+      function sendMessage() {
+        const userMessage = chatbotInput.value.trim();
+        if (userMessage) {
+          // Add user message to chat
+          addMessage(userMessage, 'user');
 
-            // Scroll to bottom
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+          // Clear input
+          chatbotInput.value = '';
+
+          // Simulate bot response
+          setTimeout(() => {
+            const botMessage = getBotResponse(userMessage);
+            addMessage(botMessage, 'bot');
+          }, 500);
         }
+      }
 
-        function getBotResponse(userMessage) {
-            const lowerCaseMessage = userMessage.toLowerCase();
+      function addMessage(message, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', sender);
+        messageElement.textContent = message;
+        chatbotMessages.appendChild(messageElement);
 
-            if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) {
-                return 'Hello! Welcome to Aroma Coffee. How can I assist you today?';
-            } else if (lowerCaseMessage.includes('menu')) {
-                return 'Our menu includes a variety of coffees, lattes, cappuccinos, and pastries. Would you like to know more about a specific item?';
-            } else if (lowerCaseMessage.includes('hours')) {
-                return 'We are open from 8:00 AM to 8:00 PM every day.';
-            } else if (lowerCaseMessage.includes('location')) {
-                return 'We are located at Aroma Coffee, xxxx xxx, xxxxxx, xxxxxxx.';
-            } else if (lowerCaseMessage.includes('contact')) {
-                return 'You can reach us at +94 xx xxx xxxx or email us at AromaCoffee@email.com.';
-            } else {
-                return 'I’m sorry, I didn’t understand that. How can I assist you?';
-            }
+        // Scroll to bottom
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
+      function getBotResponse(userMessage) {
+        const lowerCaseMessage = userMessage.toLowerCase();
+
+        if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) {
+          return 'Hello! Welcome to Aroma Coffee. How can I assist you today?';
+        } else if (lowerCaseMessage.includes('menu')) {
+          return 'Our menu includes a variety of coffees, lattes, cappuccinos, and pastries. Would you like to know more about a specific item?';
+        } else if (lowerCaseMessage.includes('hours')) {
+          return 'We are open from 8:00 AM to 8:00 PM every day.';
+        } else if (lowerCaseMessage.includes('offers')) {
+          return 'දැනට පවතින සියලුම දෑ "Special Offer products" Category යටතේ පෙන්වා දී ඇත. ';
+        } else if (lowerCaseMessage.includes('book')) {
+          return 'Countact us නම් පෝරමය පිරවීමෙන් ඔබට එය සිදු කරගත හැක. ';
+        } else if (lowerCaseMessage.includes('coconut')) {
+          return 'A Coconut Latte is a creamy and indulgent coffee drink that combines the rich, bold flavor of espresso with the smooth, tropical sweetness of coconut milk. It’s a perfect blend of nutty and aromatic notes, offering a dairy-free alternative for coffee lovers.';
+        } else if (lowerCaseMessage.includes('location')) {
+          return 'We are located at Aroma Coffee, xxxx xxx, xxxxxx, xxxxxxx.';
+        } else if (lowerCaseMessage.includes('contact')) {
+          return 'You can reach us at +94 xx xxx xxxx or email us at AromaCoffee@email.com.';
+        } else {
+          return 'I’m sorry, I didn’t understand that. How can I assist you?';
         }
+      }
     });
-</script>
+  </script>
   <script src="menu.js"></script>
+  <script src="searchEngine.js"></script>
 </body>
 
 </html>
